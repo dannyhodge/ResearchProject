@@ -1,0 +1,680 @@
+-1-1
+gender: male
+age: 20.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-1-2
+gender: male
+age: 24.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-2-1
+gender: male
+age: 20.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-2-2
+gender: male
+age: 23.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-3-1
+gender: male
+age: 21.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-3-2
+gender: male
+age: 23.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-4-1
+gender: male
+age: 45.0
+facialhair: no
+glasses: no
+haircolour: grey
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-5-1
+gender: male
+age: 45.0
+facialhair: no
+glasses: no
+haircolour: grey
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-6-1
+gender: male
+age: 32.0
+facialhair: yes
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-7-1
+gender: male
+age: 32.0
+facialhair: yes
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-8-1
+gender: male
+age: 32.0
+facialhair: yes
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-9-1
+gender: male
+age: 32.0
+facialhair: yes
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-10-1
+gender: male
+age: 38.0
+facialhair: no
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-11-1
+gender: male
+age: 38.0
+facialhair: no
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-12-1
+gender: female
+age: 29.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: yes
+makeuplip: yes
+hat: no
+-13-1
+gender: female
+age: 29.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: yes
+makeuplip: yes
+hat: no
+-14-1
+gender: male
+age: 19.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-15-1
+gender: male
+age: 19.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-16-1
+gender: male
+age: 48.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-17-1
+gender: male
+age: 48.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-18-1
+gender: male
+age: 48.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-19-1
+gender: male
+age: 25.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-20-1
+gender: male
+age: 27.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-21-1
+gender: male
+age: 35.0
+facialhair: yes
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-22-1
+gender: male
+age: 35.0
+facialhair: yes
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-23-1
+gender: male
+age: 35.0
+facialhair: yes
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-24-1
+gender: male
+age: 28.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-25-1
+gender: male
+age: 28.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-26-1
+gender: male
+age: 28.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-27-1
+gender: female
+age: 32.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-28-1
+gender: female
+age: 32.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-29-1
+gender: male
+age: 20.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-30-1
+gender: male
+age: 21.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-31-1
+gender: male
+age: 25.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-32-1
+gender: male
+age: 25.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-33-1
+gender: male
+age: 25.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-34-1
+gender: male
+age: 25.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-35-1
+gender: male
+age: 25.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-36-1
+gender: male
+age: 22.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-37-1
+gender: male
+age: 22.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-38-1
+gender: male
+age: 22.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-39-1
+gender: female
+age: 30.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: yes
+makeuplip: no
+hat: no
+-40-1
+gender: female
+age: 29.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: yes
+makeuplip: no
+hat: no
+-41-1
+gender: male
+age: 42.0
+facialhair: no
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-42-1
+gender: male
+age: 42.0
+facialhair: no
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-43-1
+gender: male
+age: 42.0
+facialhair: no
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-44-1
+gender: male
+age: 42.0
+facialhair: no
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-45-1
+gender: male
+age: 27.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-46-1
+gender: male
+age: 27.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-47-1
+gender: male
+age: 27.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-48-1
+gender: female
+age: 22.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: yes
+hat: no
+-49-1
+gender: female
+age: 26.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: yes
+hat: no
+-50-1
+gender: female
+age: 26.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: yes
+hat: no
+-51-1
+gender: male
+age: 21.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-52-1
+gender: male
+age: 21.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-53-1
+gender: male
+age: 33.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-54-1
+gender: male
+age: 33.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-55-1
+gender: male
+age: 27.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-56-1
+gender: male
+age: 29.0
+facialhair: yes
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-57-1
+gender: male
+age: 48.0
+facialhair: no
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-58-1
+gender: male
+age: 48.0
+facialhair: no
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-59-1
+gender: female
+age: 28.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: yes
+makeuplip: yes
+hat: no
+-60-1
+gender: female
+age: 28.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: yes
+makeuplip: yes
+hat: no
+-61-1
+gender: male
+age: 23.0
+facialhair: yes
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: yes
+-61-2
+gender: female
+age: 21.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: yes
+makeuplip: yes
+hat: no
+-62-1
+gender: male
+age: 23.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-62-2
+gender: male
+age: 23.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-62-3
+gender: male
+age: 23.0
+facialhair: yes
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no 

@@ -1,0 +1,126 @@
+Gillette - Razor
+adult
+male
+yes
+null
+null
+null
+null
+null
+Rimmel - Lipstick
+null
+female
+null
+null
+null
+null
+yes
+null
+UrbanDecay- Eyeshadow
+null
+female
+null
+null
+null
+yes
+null
+null
+Smyths Toys - Male Toy
+child
+male
+null
+null
+null
+null
+null
+null
+Smyths Toys - Female Toy
+child
+female
+null
+null
+null
+null
+null
+null
+Specsavers - Male Glasses
+null
+male
+null
+yes
+null
+null
+null
+null
+Specsavers - Female Glasses
+null
+female
+null
+yes
+null
+null
+null
+null
+Asos Hats - Male
+adult
+male
+null
+null
+null
+null
+null
+yes
+Asos Hats - Female
+adult
+female
+null
+null
+null
+null
+null
+yes
+Beard Hair Growth Solution
+adult
+male
+no
+null
+null
+null
+null
+null
+SimpleWigs for women
+adult
+female
+null
+null
+yes
+null
+null
+null
+Hair transplants for men
+adult
+male
+null
+null
+yes
+null
+null
+null
+Local football game tickets
+adult
+male
+null
+null
+null
+null
+null
+null
+Mecca Bingo
+elderly
+female
+null
+null
+null
+null
+null
+null

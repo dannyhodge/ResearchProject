@@ -1,16 +1,12 @@
 import requests
-import json
 import glob
 from io import BytesIO
 from PIL import Image, ImageDraw
 import matplotlib.pyplot as plt
 import cognitive_face as CF
 import locale
-import requests
-from io import BytesIO
-from PIL import Image, ImageDraw
-import json
 import math
+import json
 
 subscription_key = 'c44df6b56edb48e28b330a4178fefa4b'
 assert subscription_key
@@ -111,7 +107,7 @@ totalFacesCount = 0
 response = requests.post(face_api_url, params=params, headers=headers, data=base_image)
 d3 = json.dumps(json.loads(response.text))
 alldata = response.json()
-#print(d3)
+print(d3)
     
 numfaces = len(alldata) #GET FACES NUM FROM API
 print("Face count: {0}".format(numfaces))
@@ -134,11 +130,15 @@ for facenum in range(numfaces):
     print(ageGuess)
     
     predictedString = str(data['faceAttributes']['gender'])
+    
     predictedString.strip()
     print("{0}".format(predictedString))
     genderGuess = data['faceAttributes']['gender']
+
     
-    totalBeardNum = data['faceAttributes']['facialHair']['moustache'] + data['faceAttributes']['facialHair']['beard'] + data['faceAttributes']['facialHair']['sideburns']
+    totalBeardNum = data['faceAttributes']['facialHair']['moustache']
+    + data['faceAttributes']['facialHair']['beard']
+    + data['faceAttributes']['facialHair']['sideburns']
     
     if totalBeardNum > 0.6:
         print("Has facial hair")

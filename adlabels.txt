@@ -1,4 +1,4 @@
-Gillette - Razor
+Razor
 adult
 male
 yes
@@ -7,7 +7,7 @@ null
 null
 null
 null
-Rimmel - Lipstick
+Lipstick
 null
 female
 null
@@ -16,7 +16,7 @@ null
 null
 yes
 null
-UrbanDecay- Eyeshadow
+Eyeshadow
 null
 female
 null
@@ -25,7 +25,7 @@ null
 yes
 null
 null
-Smyths Toys - Male Toy
+Male Toys
 child
 male
 null
@@ -34,7 +34,7 @@ null
 null
 null
 null
-Smyths Toys - Female Toy
+Female Toys
 child
 female
 null
@@ -43,7 +43,7 @@ null
 null
 null
 null
-Specsavers - Male Glasses
+Male Glasses
 null
 male
 null
@@ -52,7 +52,7 @@ null
 null
 null
 null
-Specsavers - Female Glasses
+Female Glasses
 null
 female
 null
@@ -61,7 +61,7 @@ null
 null
 null
 null
-Asos Hats - Male
+Hats - Male
 adult
 male
 null
@@ -70,7 +70,7 @@ null
 null
 null
 yes
-Asos Hats - Female
+Hats - Female
 adult
 female
 null
@@ -79,16 +79,7 @@ null
 null
 null
 yes
-Beard Hair Growth Solution
-adult
-male
-no
-null
-null
-null
-null
-null
-SimpleWigs for women
+Female Wigs
 adult
 female
 null
@@ -106,7 +97,7 @@ yes
 null
 null
 null
-Local football game tickets
+Local football tickets
 adult
 male
 null
@@ -115,9 +106,18 @@ null
 null
 null
 null
-Mecca Bingo
+Bingo
 elderly
 female
+null
+null
+null
+null
+null
+null
+Soft Drink
+null
+null
 null
 null
 null

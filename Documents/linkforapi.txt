@@ -1,0 +1,5 @@
+https://portal.azure.com/#@universityoflincoln.onmicrosoft.com/resource/subscriptions/fb95c543-35dd-4a6b-b704-afdf37c5cbdf/resourceGroups/Research-project/providers/Microsoft.CognitiveServices/accounts/faceapi/quickstart
+
+http://arma.sourceforge.net/chokepoint/
+
+https://ibug.doc.ic.ac.uk/resources/300-W_IMAVIS/

@@ -630,17 +630,77 @@ makeuplip: yes
 hat: no
 -61-1
 gender: male
-age: 23.0
+age: 69.0
+facialhair: yes
+glasses: yes
+haircolour: grey
+bald: yes
+makeupeye: no
+makeuplip: no
+hat: yes
+-62-1
+gender: male
+age: 46.0
+facialhair: no
+glasses: yes
+haircolour: brown
+bald: yes
+makeupeye: no
+makeuplip: no
+hat: no
+-63-1
+gender: male
+age: 49.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: yes
+makeupeye: no
+makeuplip: no
+hat: yes
+-64-1
+gender: female
+age: 27.0
+facialhair: no
+glasses: yes
+haircolour: blonde
+bald: no
+makeupeye: no
+makeuplip: yes
+hat: no
+-65-1
+gender: female
+age: 43.0
+facialhair: no
+glasses: yes
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-66-1
+gender: male
+age: 37.0
 facialhair: yes
 glasses: no
 haircolour: brown
 bald: no
 makeupeye: no
 makeuplip: no
-hat: yes
--61-2
+hat: no
+-67-1
+gender: male
+age: 22.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-68-1
 gender: female
-age: 21.0
+age: 46.0
 facialhair: no
 glasses: no
 haircolour: brown
@@ -648,30 +708,120 @@ bald: no
 makeupeye: yes
 makeuplip: yes
 hat: no
--62-1
-gender: male
-age: 23.0
+-69-1
+gender: female
+age: 28.0
 facialhair: no
 glasses: no
-haircolour: brown
+haircolour: blonde
+bald: no
+makeupeye: yes
+makeuplip: yes
+hat: no
+-70-1
+gender: male
+age: 79.0
+facialhair: no
+glasses: no
+haircolour: grey
 bald: no
 makeupeye: no
 makeuplip: no
 hat: no
--62-2
+-71-1
 gender: male
-age: 23.0
-facialhair: no
-glasses: no
-haircolour: brown
-bald: no
-makeupeye: no
-makeuplip: no
-hat: no
--62-3
-gender: male
-age: 23.0
+age: 78.0
 facialhair: yes
+glasses: no
+haircolour: grey
+bald: yes
+makeupeye: no
+makeuplip: no
+hat: no
+-72-1
+gender: male
+age: 26.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-73-1
+gender: female
+age: 49.0
+facialhair: no
+glasses: no
+haircolour: blonde
+bald: no
+makeupeye: yes
+makeuplip: yes
+hat: no
+-74-1
+gender: male
+age: 64.0
+facialhair: no
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-75-1
+gender: male
+age: 28.0
+facialhair: yes
+glasses: yes
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-76-1
+gender: female
+age: 45.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: yes
+makeuplip: yes
+hat: no
+-77-1
+gender: female
+age: 14.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: yes
+makeuplip: yes
+hat: no
+-78-1
+gender: male
+age: 15.0
+facialhair: no
+glasses: no
+haircolour: brown
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-79-1
+gender: male
+age: 16.0
+facialhair: no
+glasses: no
+haircolour: black
+bald: no
+makeupeye: no
+makeuplip: no
+hat: no
+-80-1
+gender: male
+age: 59.0
+facialhair: no
 glasses: no
 haircolour: brown
 bald: no

@@ -6,10 +6,7 @@ from PIL import Image, ImageDraw
 import matplotlib.pyplot as plt
 import cognitive_face as CF
 import locale
-import requests
-from io import BytesIO
 from PIL import Image, ImageDraw
-import json
 import math
 
 subscription_key = 'c44df6b56edb48e28b330a4178fefa4b'
@@ -40,7 +37,7 @@ for filename in glob.glob('testimages/*.jpg'): #assuming gif
     image_list.append(image_data)
    # print("Path: {0}".format(filename))
     image_paths.append(filename)
-    
+    print(filename)
 
 headers = { 'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream' }
     
@@ -55,8 +52,8 @@ params = {
 
 
 
-CF.Key.set('be41b43be574458a82f07a8c601793ea')
-CF.BaseUrl.set('https://uksouth.api.cognitive.microsoft.com/face/v1.0/')
+CF.Key.set('c44df6b56edb48e28b330a4178fefa4b')
+CF.BaseUrl.set('https://uksouth.api.cognitive.microsoft.com/face/v1.0/detect')
 
 
 def parseData():
@@ -80,43 +77,30 @@ parseData()
 
 
 counter = 0
-    
-#for img in image_list:
-    
-   # response = requests.post(face_api_url, params=params, headers=headers, data=img)
- #   print(response.json())
-  #  faces = CF.face.detect(image_paths[counter])
-                          
-  #  image = Image.open(BytesIO(img))
-
-  #  draw = ImageDraw.Draw(image)
- #   for face in faces:
- #       draw.rectangle(getRectangle(face), outline='red')
- #       print(faces)
-  #  image.show()
- #   counter = counter + 1
-
-counter = 0
 
 totalFacesCount = 0
 
 for img in image_list:
+
+
+        
     labelimage = counter * 10
     response = requests.post(face_api_url, params=params, headers=headers, data=img)
 
-   # if labels[labelimage][2] == '-':      
-   #     print("Image: {0}".format(labels[labelimage][1]))
-#    else:
-  #      print("Image: {0}{1}".format(labels[labelimage][1],labels[labelimage][2]))
+    if labels[labelimage][2] == '-':      
+        print("Image: {0}".format(labels[labelimage][1]))
+    else:
+        print("Image: {0}{1}".format(labels[labelimage][1],labels[labelimage][2]))
+
     d3 = json.dumps(json.loads(response.text))
     alldata = response.json()
     print(d3)
     
     numfaces = len(alldata) #GET FACES NUM FROM API
-  #  print("numfaces")
     print(numfaces)
- #   
-   
+    
+    if numfaces == 0:
+        counter += 1
     
     for facenum in range(numfaces):
       totalFacesCount += 1
@@ -133,7 +117,7 @@ for img in image_list:
       if facenum != tempLabelNum-1:
        # print("Label num: ")
       #  print(labels[labelimage])
-    #    print("FACE NOT FOUND, MUST BE OBSCURED, MOVE ONTO NEXT LABEL")
+        print("FACE NOT FOUND, MUST BE OBSCURED, MOVE ONTO NEXT LABEL")
         counter = counter + 1
         labelimage = counter * 10
 
@@ -157,7 +141,7 @@ for img in image_list:
       ageDiff = ageDiff * ageDiff
       ageDiff = math.sqrt(ageDiff)
       print("Age diff: {0}".format(ageDiff))
-      if ageDiff <= 5:
+      if ageDiff <= 10:
           print("AGE CORRECT")
           ageAccuracy += 1
       else:
@@ -206,7 +190,7 @@ for img in image_list:
       if hasFacialHair == labelledString:
           print("FACIAL HAIR CORRECT")
           facialHairAccuracy += 1
-     # else:
+      else:
           print("FACIAL HAIR NOT CORRECT")
 
       print("\n")
@@ -294,15 +278,15 @@ for img in image_list:
       labelledString.strip()
       predictedString = str(data['faceAttributes']['makeup']['eyeMakeup'])
     #  print("PredictedString for eye makeup: {0}".format(predictedString))
-      lipPrediction = " "
+      eyePrediction = " "
       if predictedString == "True":
           print("Eye Makeup is true")
-          lipPrediction = "yes"
+          eyePrediction = "yes"
       else:
           print("Eye Makeup is false")
-          lipPrediction = "no"
+          eyePrediction = "no"
 
-      if lipPrediction == labelledString:
+      if eyePrediction == labelledString:
           print("Eye Makeup correct")
           eyeMakeupAccuracy += 1
       else:
@@ -327,12 +311,21 @@ for img in image_list:
           print("Has an accessory on")
           print(str(data['faceAttributes']['accessories'][0]))
           print(str(data['faceAttributes']['accessories'][0]['type']))
-          if str(data['faceAttributes']['accessories'][0]['type']) == "headwear": 
-              print("Has hat on")
-              hatPrediction = "yes"
-          else:
-              print("No hat on")
-              hatPrediction = "no"
+          accessoryCount = len(data['faceAttributes']['accessories'])
+          if accessoryCount == 1:
+              if str(data['faceAttributes']['accessories'][0]['type']) == "headwear": 
+                  print("Has hat on")
+                  hatPrediction = "yes"
+              else:
+                  print("No hat on")
+                  hatPrediction = "no"
+          if accessoryCount == 2:
+              if str(data['faceAttributes']['accessories'][0]['type']) == "headwear" or str(data['faceAttributes']['accessories'][1]['type']) == "headwear": 
+                  print("Has hat on")
+                  hatPrediction = "yes"
+              else:
+                  print("No hat on")
+                  hatPrediction = "no"
 
       else:
           print("No hat on")

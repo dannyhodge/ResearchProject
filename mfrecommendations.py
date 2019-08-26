@@ -23,6 +23,7 @@ class AdUnit:
     eyeMakeup = "no"
     lipMakeup = "no"
     hat = "no"
+    groupType = "null"
 
 class faceInImage:
     faceID = 0
@@ -63,8 +64,9 @@ eyeMakeupGuess = "no"
 hatGuess = "no"
 
 adUnits = []
+allFaces = []
 
-
+groupType = "null"
 
 #Load in ad data
 adlabels = []
@@ -85,7 +87,7 @@ adlabelCounter = 0
 adlabelsSize = len(adlabels)
 print("Ad labels size: {0}".format(adlabelsSize))
 
-for x in range(0, adlabelsSize, 9):
+for x in range(0, adlabelsSize, 10):
 
 
         newAd = AdUnit()
@@ -99,7 +101,9 @@ for x in range(0, adlabelsSize, 9):
         newAd.eyeMakeup = adlabels[x+6].strip()
         newAd.lipMakeup = adlabels[x+7].strip()
         newAd.hat = adlabels[x+8].strip()
-
+        newAd.hat = adlabels[x+8].strip()
+        newAd.groupType = adlabels[x+9].strip()
+        print("group type: {0}".format(adlabels[x+9].strip()))
         adUnits.append(newAd)
    
 
@@ -122,9 +126,11 @@ print(d3)
 numfaces = len(alldata) #GET FACES NUM FROM API
 print("Face count: {0}".format(numfaces))
    
-   
+counter = 0
     
 for facenum in range(numfaces):
+    newFace = faceInImage()
+    
     totalFacesCount += 1    
     data = alldata[facenum]
     
@@ -217,95 +223,194 @@ for facenum in range(numfaces):
         print("No hat on")
         hatGuess = "no"
 
+    newFace.faceID = counter
+    newFace.age = ageGuess
+    newFace.gender = genderGuess
+    newFace.facialHair = facialHairGuess
+    newFace.glasses = glassesGuess
+    newFace.bald = hairGuess
+    newFace.eyeMakeup = eyeMakeupGuess
+    newFace.lipMakeup = lipMakeupGuess
+    newFace.hat = hatGuess
 
-
+    allFaces.append(newFace)
+    counter += 1
+    
 #end of for each face loop
 
+numOfFaces = len(allFaces)
+
+if numOfFaces > 1:
+    
+    if numOfFaces == 2:  #couple
+
+        firstGender = "null"
+        firstAge = "null"
+        for face in allFaces:
+
+            if firstGender == "null":
+                
+                firstGender = face.gender
+                
+            if firstAge == "null":
+                
+                firstAge = face.age
+
+
+            elif firstGender != "null" and firstAge != "null":
+
+                if firstGender != face.gender and firstAge == face.age:
+                
+                    groupType = "couple"
+                    print("COUPLE")
+            
+    if numOfFaces >= 2: #family
+
+         lastAge = "null"
+
+         for face in allFaces:
+
+                if lastAge == "null":
+                
+                    lastAge = face.age
+
+                elif lastAge != "null":
+
+                    if lastAge != face.age:
+
+                        groupType = "family"   
+                        print("FAMILY")
+                        break
+                    else:
+                        lastAge = face.age
+                        
+    if numOfFaces >= 2: #friends
+
+         lastAge = "null"
+         lastGender = "null"
+
+         for face in allFaces:
+
+                if lastAge == "null":
+                
+                    lastAge = face.age
+                    
+                if lastGender == "null":
+                
+                    lastGender = face.gender
+
+                elif lastAge != "null" and lastGender != "null":
+
+                    if lastAge == face.age and lastGender == face.gender:
+                        lastAge = face.age
+                        lastGender = face.gender
+                        
+                    else:
+                        break
+
+                if face.faceID == (numOfFaces - 1):
+                       if face.age == "child":
+                           groupType = "youngfriends"   
+                           print("YOUNG FRIENDS")
+                       if face.age == "adult":
+                           groupType = "adultfriends"   
+                           print("ADULT FRIENDS")
+                       if face.age == "elderly":
+                           groupType = "elderlyfriends"   
+                           print("ELDERLY FRIENDS")
 correctAds = []
+
 
 
 for adunit in adUnits:
     adPoints = 0
+
+    for face in allFaces:    
+        if adunit.age == face.age:
+            adPoints += 1
+        
+        
+        if adunit.age != face.age and adunit.age != "null":
+            adPoints = -1000
+
+        
+
+        if adunit.gender == face.gender:
+            adPoints += 1
     
-    if adunit.age == ageGuess:
-        adPoints += 1
         
-        
-    if adunit.age != ageGuess and adunit.age != "null":
-        adPoints = -1000
-
-        
-
-    if adunit.gender == genderGuess:
-        adPoints += 1
-    
-        
-    if adunit.gender != genderGuess and adunit.gender != "null":
-        adPoints = -1000
+        if adunit.gender != face.gender and adunit.gender != "null":
+            adPoints = -1000
 
 
 
-    if adunit.facialHair == facialHairGuess:
-        adPoints += 1
+        if adunit.facialHair == face.facialHair:
+            adPoints += 1
         
 
         
-    if adunit.facialHair != facialHairGuess and adunit.facialHair != "null":
-        adPoints = -1000
+        if adunit.facialHair != face.facialHair and adunit.facialHair != "null":
+            adPoints = -1000
 
 
 
-    if adunit.glasses == glassesGuess:
-        adPoints += 1
+        if adunit.glasses == face.glasses:
+            adPoints += 1
         
         
-    if adunit.glasses != glassesGuess and adunit.glasses != "null":
-        adPoints = -1000
+        if adunit.glasses != face.glasses and adunit.glasses != "null":
+            adPoints = -1000
 
 
 
-    if adunit.bald == hairGuess:
-        adPoints += 1
+        if adunit.bald == face.bald:
+            adPoints += 1
         
         
-    if adunit.bald != hairGuess and adunit.bald != "null":
-        adPoints = -1000
+        if adunit.bald != face.bald and adunit.bald != "null":
+            adPoints = -1000
 
 
 
-    if adunit.eyeMakeup == eyeMakeupGuess:
-        adPoints += 1
+        if adunit.eyeMakeup == face.eyeMakeup:
+            adPoints += 1
         
         
-    if adunit.eyeMakeup != eyeMakeupGuess and adunit.eyeMakeup != "null":
-        adPoints = -1000
+        if adunit.eyeMakeup != face.eyeMakeup and adunit.eyeMakeup != "null":
+            adPoints = -1000
 
 
 
 
-    if adunit.lipMakeup == lipMakeupGuess:
-        adPoints += 1
+        if adunit.lipMakeup == face.lipMakeup:
+            adPoints += 1
         
         
-    if adunit.lipMakeup != lipMakeupGuess and adunit.lipMakeup != "null":
+        if adunit.lipMakeup != face.lipMakeup and adunit.lipMakeup != "null":
 
-        adPoints = -1000
+            adPoints = -1000
 
 
 
-    if adunit.hat == hatGuess:
-        adPoints += 1
+        if adunit.hat == face.hat:
+            adPoints += 1
         
         
-    if adunit.hat != hatGuess and adunit.hat != "null":
-        adPoints = -1000
+        if adunit.hat != face.hat and adunit.hat != "null":
+            adPoints = -1000
 
-
-    if adPoints >= 0:
-        print("Current best: {0}".format(adunit.name)) 
-        correctAds.append(adunit)     
+        if adunit.groupType == groupType:
+            adPoints += 1
+            
+        if adunit.groupType != groupType and adunit.groupType != "null":
+            adPoints -= 1000
         
-    
+        if adPoints >= 0:
+            print("Current best: {0}".format(adunit.name)) 
+            correctAds.append(adunit)     
+        
+
+
 correctAd = AdUnit()
 correctAdsLength = len(correctAds)
 import random

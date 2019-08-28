@@ -7,6 +7,11 @@ import cognitive_face as CF
 import locale
 import math
 import json
+import time
+
+
+start = time.time()
+
 
 subscription_key = 'c44df6b56edb48e28b330a4178fefa4b'
 assert subscription_key
@@ -38,7 +43,6 @@ class faceInImage:
 
 
 face_api_url = 'https://uksouth.api.cognitive.microsoft.com/face/v1.0/detect'
-image_url = 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/44052524_2378544642162045_3114233859516923904_n.jpg?_nc_cat=103&_nc_ht=scontent-lhr3-1.xx&oh=ee0a7aa4eee6496c190d51808615bff3&oe=5D841C98'
 
 headers = { 'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream' }
     
@@ -85,7 +89,7 @@ adlabelCounter = 0
 
 
 adlabelsSize = len(adlabels)
-print("Ad labels size: {0}".format(adlabelsSize))
+#print("Ad labels size: {0}".format(adlabelsSize))
 
 for x in range(0, adlabelsSize, 10):
 
@@ -103,7 +107,7 @@ for x in range(0, adlabelsSize, 10):
         newAd.hat = adlabels[x+8].strip()
         newAd.hat = adlabels[x+8].strip()
         newAd.groupType = adlabels[x+9].strip()
-        print("group type: {0}".format(adlabels[x+9].strip()))
+    #    print("group type: {0}".format(adlabels[x+9].strip()))
         adUnits.append(newAd)
    
 
@@ -121,10 +125,10 @@ totalFacesCount = 0
 response = requests.post(face_api_url, params=params, headers=headers, data=base_image)
 d3 = json.dumps(json.loads(response.text))
 alldata = response.json()
-print(d3)
+#print(d3)
     
 numfaces = len(alldata) #GET FACES NUM FROM API
-print("Face count: {0}".format(numfaces))
+#print("Face count: {0}".format(numfaces))
    
 counter = 0
     
@@ -143,32 +147,31 @@ for facenum in range(numfaces):
     if data['faceAttributes']['age'] >= 60:
         ageGuess = "elderly"
 
-    print(ageGuess)
+   # print(ageGuess)
     
     predictedString = str(data['faceAttributes']['gender'])
     
     predictedString.strip()
-    print("{0}".format(predictedString))
+    #print("{0}".format(predictedString))
     genderGuess = data['faceAttributes']['gender']
 
     
-    totalBeardNum = data['faceAttributes']['facialHair']['moustache']
-    + data['faceAttributes']['facialHair']['beard']
-    + data['faceAttributes']['facialHair']['sideburns']
+    totalBeardNum = data['faceAttributes']['facialHair']['moustache']+ data['faceAttributes']['facialHair']['beard']+ data['faceAttributes']['facialHair']['sideburns']
+    
     
     if totalBeardNum > 0.6:
-        print("Has facial hair")
+       # print("Has facial hair")
         facialHairGuess = "yes"
     else:
         facialHairGuess = "no"
-        print("No facial hair")
+       # print("No facial hair")
        
 
     if data['faceAttributes']['glasses'] == "NoGlasses":
-          print("No glasses")
+       #   print("No glasses")
           glassesGuess = "no"
     else:
-          print("Has glasses")
+        #  print("Has glasses")
           glassesGuess = "yes"
 
 
@@ -176,10 +179,10 @@ for facenum in range(numfaces):
     predictedFloat = float(data['faceAttributes']['hair']['bald'])
       
     if predictedFloat >= 0.7:
-        print("Bald")
+      #  print("Bald")
         hairGuess = "yes"
     else:
-        print("Not Bald")
+       # print("Not Bald")
         hairGuess = "no"
 
       
@@ -187,10 +190,10 @@ for facenum in range(numfaces):
     predictedFloat = str(data['faceAttributes']['makeup']['lipMakeup'])
       
     if predictedFloat == "True":
-        print("Lip Makeup")
+       # print("Lip Makeup")
         lipMakeupGuess = "yes"
     else:
-        print("No Lip Makeup")
+       # print("No Lip Makeup")
         lipMakeupGuess = "no"
          
 
@@ -198,10 +201,10 @@ for facenum in range(numfaces):
     predictedString = str(data['faceAttributes']['makeup']['eyeMakeup'])
    
     if predictedString == "True":
-        print("Eye Makeup")
+       # print("Eye Makeup")
         eyeMakeupGuess = "yes"
     else:
-        print("No Eye Makeup")
+       # print("No Eye Makeup")
         eyeMakeupGuess = "no"
 
          
@@ -209,18 +212,18 @@ for facenum in range(numfaces):
 
     predictedString = str(data['faceAttributes']['accessories'])
     if predictedString != "[]":
-        print("Has an accessory on")
-        print(str(data['faceAttributes']['accessories'][0]))
-        print(str(data['faceAttributes']['accessories'][0]['type']))
+      #  print("Has an accessory on")
+       # print(str(data['faceAttributes']['accessories'][0]))
+      #  print(str(data['faceAttributes']['accessories'][0]['type']))
         if str(data['faceAttributes']['accessories'][0]['type']) == "headwear": 
-            print("Has hat on")
+        #    print("Has hat on")
             hatGuess = "yes"
         else:
-            print("No hat on")
+         #   print("No hat on")
             hatGuess = "no"
 
     else:
-        print("No hat on")
+    #    print("No hat on")
         hatGuess = "no"
 
     newFace.faceID = counter
@@ -262,7 +265,7 @@ if numOfFaces > 1:
                 if firstGender != face.gender and firstAge == face.age:
                 
                     groupType = "couple"
-                    print("COUPLE")
+                  #  print("COUPLE")
             
     if numOfFaces >= 2: #family
 
@@ -279,7 +282,7 @@ if numOfFaces > 1:
                     if lastAge != face.age:
 
                         groupType = "family"   
-                        print("FAMILY")
+                    #    print("FAMILY")
                         break
                     else:
                         lastAge = face.age
@@ -311,37 +314,34 @@ if numOfFaces > 1:
                 if face.faceID == (numOfFaces - 1):
                        if face.age == "child":
                            groupType = "youngfriends"   
-                           print("YOUNG FRIENDS")
+                           #print("YOUNG FRIENDS")
                        if face.age == "adult":
                            groupType = "adultfriends"   
-                           print("ADULT FRIENDS")
+                          # print("ADULT FRIENDS")
                        if face.age == "elderly":
                            groupType = "elderlyfriends"   
-                           print("ELDERLY FRIENDS")
+                          # print("ELDERLY FRIENDS")
 correctAds = []
 
 
 
 for adunit in adUnits:
-    adPoints = 0
-
-    for face in allFaces:    
+    
+    for face in allFaces:
+        adPoints = 0
         if adunit.age == face.age:
             adPoints += 1
         
-        
+       
         if adunit.age != face.age and adunit.age != "null":
             adPoints = -1000
-
         
 
         if adunit.gender == face.gender:
             adPoints += 1
-    
         
         if adunit.gender != face.gender and adunit.gender != "null":
             adPoints = -1000
-
 
 
         if adunit.facialHair == face.facialHair:
@@ -359,8 +359,7 @@ for adunit in adUnits:
         
         
         if adunit.glasses != face.glasses and adunit.glasses != "null":
-            adPoints = -1000
-
+            adPoints = -1000       
 
 
         if adunit.bald == face.bald:
@@ -380,16 +379,12 @@ for adunit in adUnits:
             adPoints = -1000
 
 
-
-
         if adunit.lipMakeup == face.lipMakeup:
             adPoints += 1
         
         
         if adunit.lipMakeup != face.lipMakeup and adunit.lipMakeup != "null":
-
             adPoints = -1000
-
 
 
         if adunit.hat == face.hat:
@@ -406,10 +401,10 @@ for adunit in adUnits:
             adPoints -= 1000
         
         if adPoints >= 0:
-            print("Current best: {0}".format(adunit.name)) 
+       #     print("Current best: {0}".format(adunit.name)) 
             correctAds.append(adunit)     
         
-
+    
 
 correctAd = AdUnit()
 correctAdsLength = len(correctAds)
@@ -417,17 +412,12 @@ import random
 
 randNum = random.randint(0,correctAdsLength-1)
 
-print(randNum)
+#print(randNum)
 
-for ad in correctAds:
-    correctAd = correctAds[randNum]
+
+correctAd = correctAds[randNum]
 
     
-print("\n")
+#print("\n")
 print(correctAd.name)
-
-
-
-
-        
-      
+print("Time took to execute entire script: {0}".format(time.time()-start))
